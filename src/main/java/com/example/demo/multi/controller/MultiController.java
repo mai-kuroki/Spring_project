@@ -16,7 +16,7 @@ public class MultiController {
 	}
 
 	@GetMapping("multi")
-	public String multi(Model model) {
+	public String showMulti(Model model) {
 
 		String result = String.valueOf(multiService.multi(5, 6));
 

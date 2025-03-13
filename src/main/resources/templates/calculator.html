@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>計算機</title>
+</head>
+
+<body>
+	<h1>計算機</h1>
+	<form action="calculator" method="post">
+		<input type="number" name="num1" th:value="${num1}">
+		<select name="operation">
+			<option value="+" th:selected="${operations == '+'}">+</option>
+			<option value="-" th:selected="${operations == '-'}">-</option>
+			<option value="×" th:selected="${operations == '×'}">×</option>
+			<option value="÷" th:selected="${operations == '÷'}">÷</option>
+		</select>
+		<input type="number" name="num2" th:value="${num2}">
+		<button type="submit">=</button>
+	</form>
+
+	<p th:if="${result != null}" th:text="${result}"></p>
+	<p th:if="${error != null}" th:text="${error}"></p>
+</body>
+
+</html>
